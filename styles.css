@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+    font-family: arial;
+}
+
+h1{
+    padding: 10px;
+    border: 5px solid red;
+    font-family: Times;
+}
+
+form{
+    padding: 10px;
+    border: 2px solid black;
+    background-color: white;
+}
+
