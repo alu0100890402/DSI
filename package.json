@@ -1,0 +1,22 @@
+{
+  "name": "dsi",
+  "version": "1.0.0",
+  "description": "Red social para subir fotos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alu0100890402/DSI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100890402/DSI/issues"
+  },
+  "homepage": "https://github.com/alu0100890402/DSI#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
