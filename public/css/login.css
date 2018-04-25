@@ -1,0 +1,19 @@
+body {
+    background: url(../images/fondo.jpg);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.jumbotron {
+	background-color: transparent;
+}
+
+
+#formulario
+{
+color: white;
+}

@@ -2,10 +2,48 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/login.css">
     <meta charset="utf-8">
     <title>Pagina login</title>
   </head>
-  <body>
 
+  <body>
+          <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row ">
+            <div class="col-md-8 text-right">
+              <a href="https://ull.es">
+              <img class ="img-fluid" src="../public/images/logotipo.png" width="300" height="300"/>
+              </a>
+                  <p class="lead">Vive una experiencia única todos juntos.</p>
+            </div>
+
+      </div>
+        </div>
+          </div>
+
+      <form action="pagina2.html" class=" col-md-6 offset-md-3" id="formulario" method="get">
+      <!--primera fila-->
+        <div class="form-row">
+          <div class="col">
+      <label for="emails">Email</label>
+      <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduce tu email" name="email" required>
+      <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="col">
+      <label for="emails">Contraseña</label>
+      <input type="password" class="form-control" placeholder="Introduce tu contraseña" name="password" required>
+    </div>
+    </div>
+      <br>
+            <p style="color:black" font-style="bold" text-align="center">Disfruta de nuestros servicios. Bienvenido.</p>
+      <br>
+      <div class="text-center">
+    <button type="submit" class="btn btn-primary" onclick="validaremail();" >Enviar Formulario</button>
+    </div>
+  </form>
   </body>
+
+
+
 </html>
