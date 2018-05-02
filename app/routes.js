@@ -17,6 +17,18 @@ router.post('/login', passport.authenticate('local-login', {
   failureFlash: true,
 }));
 
+// ---------- SIGNUP ----------
+router.get('/signup', function(req, res) {
+  res.render('signup.ejs', { message: req.flash('signupMessage') });
+});
+
+router.post('/signup', passport.authenticate('local-signup', {
+  successRedirect: '/inicio',
+  failureRedirect: '/signup',
+  failureFlash: true,
+}));
+
+
 
 module.exports = router;
 
