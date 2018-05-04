@@ -22,6 +22,10 @@
     </div>
 
     <form class=" col-md-6 offset-md-3" id="formulario" method="post" action="/signup">
+      <!--Mensaje error -->
+      <% if (message.length > 0) { %>
+        <div class="alert alert-danger"><%= message %></div>
+      <% } %> 
     <!--primera fila-->
       <div class="form-row">
         <div class="col">
@@ -46,7 +50,8 @@
         </div>
       </div>
       <br>
-            <p style="color:black" font-style="bold" text-align="center">Encantados de tenerte con nosotros. Bienvenido.</p>
+        <!-- <p style="color:black" font-style="bold" text-align="center">Encantados de tenerte con nosotros. Bienvenido.</p> -->
+        <p>Si ya tienes una cuenta, pincha <a href="/login">aquí</a> para iniciar sesión.</p>
       <br>
       <div class="text-center">
         <button type="submit" class="btn btn-primary" >Enviar Formulario</button>
