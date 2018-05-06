@@ -2,10 +2,201 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
         <link rel="stylesheet" href="../public/css/styles.css">
     </head>
 <body>
-    <h1>Práctica DSI</h1>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="../public/images/logo.png" height="28" class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Descubrir</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ajustes</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Búsqueda">
+          <button class="btn btn-outline-primary my-2 my-sm-0">Buscar</button>
+        </form>
+      </div>
+    </nav>
+    <!-- Fin de Navbar -->
+    <!-- <img src="../public/images/logotipo.png" class="mainLogo" alt="PhotoULL"> -->
+
+
+    <div class="container text-center top-30">
+      <div class="row">
+        <div class="highlight col-md-3 perfilcontainer">
+          <img src="../public/images/index/gato-enfermo.jpg" alt="Foto_de_perfil" class="img-thumbnail foto-perfil">
+          <h4 class="nombre">Minino Mininez</h4>
+          <p class="profilename">@mininomininez1</p>
+          <ul class="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              Publicaciones
+              <span class="stats">73</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              Seguidores
+              <span class="stats">45</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              Seguidos
+              <span class="stats">37</span>
+            </a>
+          </ul>
+            <button type="button" class="btn btn-outline-secondary custom-btn"><i class="fas fa-cog"></i> Editar mi perfil</button>
+        </div>
+        <div class="highlight col-md-7">
+          <div class="top-30">
+            <div class="input-status">
+              <textarea placeholder="¿Qué estás pensando?"></textarea>
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-sm btn-outline-info"><i class="fas fa-location-arrow"></i> Ubicación</button>
+                  <button type="button" class="btn btn-sm btn-outline-primary"><i class="fas fa-camera-retro"></i> Imagen</button>
+                </div>
+                <div class="col-md-6 text-right">
+                  <button type="button" class="btn btn-sm btn-outline-success">Publicar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="top-30 tablon">
+            <!-- post 1 -->
+            <div class="post">
+              <img src="../public/images/index/post-1.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
+              <div class="sub-post">
+                  <p style="font-size:1em; margin-left: 1em; margin-bottom: 5px">
+                      <a style="color:#cc3300; margin-right:1em"><i class="far fa-heart"></i> <b>45</b></a>
+                      <a data-toggle="collapse" href="#comentCollapse1" role="button" aria-expanded="false" aria-controls="comentCollapse1" style="color:#848484"><i class="far fa-comment-dots"></i> Comentar</a>
+                      <div class="collapse" id="comentCollapse1">
+                        <div class="input-comment">
+                          <input type="text" name="comment" class="comentar" placeholder="Añade un comentario" value="">
+                          <button type="button" class="btn btn-outline-primary btn-sm">Publicar</button>
+                        </div>
+                      </div>
+                  </p>
+                  <div class="comments">
+                    <p class="comentario">
+                      <a href="#" class="nombre-perfil poster">SabiduriaGatuna</a>
+                      "La puerta mejor cerrada es aquella que puede dejarse abierta"
+                    </p>
+                  </div>
+              </div>
+              <div class="post-footer">
+                hace 13 minutos
+              </div>
+            </div>
+            <!-- post 2 -->
+            <div class="post">
+              <img src="../public/images/index/post-2.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
+              <div class="sub-post">
+                  <p style="font-size:1em; margin-left: 1em; margin-bottom: 5px">
+                      <a style="color:#cc3300; margin-right:1em"><i class="far fa-heart"></i> <b>427</b></a>
+                      <a data-toggle="collapse" href="#comentCollapse2" role="button" aria-expanded="false" aria-controls="comentCollapse2" style="color:#848484"><i class="far fa-comment-dots"></i> 57</a>
+                      <div class="collapse" id="comentCollapse2">
+                        <div class="input-comment">
+                          <input type="text" name="comment" class="comentar" placeholder="Añade un comentario" value="">
+                          <button type="button" class="btn btn-outline-primary btn-sm">Publicar</button>
+                        </div>
+                      </div>
+                  </p>
+                <div class="comments">
+                  <p class="comentario">
+                    <a href="#" class="nombre-perfil poster">kittyJenner</a>
+                    Relax day with bae 😍
+                  </p>
+                  <p class="comentario">
+                    <a href="#" class="nombre-perfil">kittyFangirl</a>
+                    omg 😱
+                  </p>
+                </div>
+              </div>
+              <div class="post-footer">
+                hace 48 minutos
+              </div>
+            </div>
+            <!-- post 3 -->
+            <div class="post">
+              <img src="../public/images/index/post-3.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
+              <div class="sub-post">
+                  <p style="font-size:1em; margin-left: 1em; margin-bottom: 5px">
+                      <a style="color:#cc3300; margin-right:1em"><i class="far fa-heart"></i> <b>64</b></a>
+                      <a data-toggle="collapse" href="#comentCollapse3" role="button" aria-expanded="false" aria-controls="comentCollapse3" style="color:#848484"><i class="far fa-comment-dots"></i> 7</a>
+                      <div class="collapse" id="comentCollapse3">
+                        <div class="input-comment">
+                          <input type="text" name="comment" class="comentar" placeholder="Añade un comentario" value="">
+                          <button type="button" class="btn btn-outline-primary btn-sm">Publicar</button>
+                        </div>
+                      </div>
+                  </p>
+                  <div class="comments">
+                    <p class="comentario">
+                      <a href="#" class="nombre-perfil poster">meowNation</a>
+                      Livin it up <a href="#">#Lit</a> <a href="#">#SquadGoals</a>
+                    </p>
+                  </div>
+              </div>
+              <div class="post-footer">
+                hace 2 horas
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="highlight col-md-2 text-center">
+          <div class="top-30 top-posts">
+            <h5><b>Popular ahora</b></h5>
+            <div class="">
+              <a href="">#Fortnite</a>
+              <span class="badge">47</span>
+            </div>
+            <div class="">
+              <a href="">#picoftheday</a>
+              <span class="badge">25</span>
+            </div>
+            <div class="">
+              <a href="">#SquadGoals</a>
+              <span class="badge">7</span>
+            </div>
+          </div>
+          <div class="footer top-30">
+            &copy; 2018 PhotoULL. Todos los derechos reservados.
+            <div class="text-left">
+              <a class="footer-btn">Sobre nosotros</a>
+              <a class="footer-btn">Condiciones</a>
+              <a class="footer-btn">Políticas de privacidad</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <h1>Práctica DSI</h1>
     <p>Página con HTML básico</p>
     <p>Esta va a ser nuestra página web</p>
 
@@ -31,7 +222,7 @@
          <div class="button">
         <button type="submit">Enviar</button>
     </div>
-    </form>
+    </form> -->
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-body {
+/* body {
     background-color: lightgray;
     font-family: arial;
 }
@@ -17,4 +17,193 @@ form{
 
 p{
     font-size: 150%;
+} */
+body {
+    background: url(../images/fondo.jpg);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a {
+  cursor: pointer;
+}
+
+input {
+  background-color: rgba(0,0,0,0);
+  border: none;
+}
+
+textarea {
+  padding: 4px;
+  background-color: rgba(0,0,0,0);
+  width: 100%;
+  /* height: 75%; */
+  /* color: red; */
+  border: none;
+  resize: none;
+}
+
+.container {
+  /* margin: 1em; */
+  max-width: 95%;
+  /* border: 1px solid black; */
+}
+
+.post {
+  background-color: rgba(255,255,255,150);
+  /* border: 1px solid #848484; */
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.sub-post {
+  text-align: left;
+  padding: 10px;
+
+}
+
+.comments {
+  margin-top: -10px;
+  padding: 5px;
+}
+
+.poster {
+  font-size: 17px;
+}
+
+.nombre-perfil {
+  font-weight: bold;
+  /* color:  #6600cc; */
+  margin-right: 0.5em;
+}
+.options {
+  font-size: 20px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+
+}
+
+.post-footer {
+  text-align: right;
+  font-size: 0.9em;
+  color: #7a7a52;
+  margin-right: 5px;
+}
+
+.comments {
+  /* font-size: 17px; */
+}
+
+.comentario {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-size: 0.9em;
+}
+
+.img-post {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.custom-btn {
+  margin-top: 10px;
+}
+
+.navbar-brand {
+  color: #0819cf !important;
+  font-weight: bold;
+}
+
+.nombre {
+  font-style: italic;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profilename {
+  margin-top: -5px;
+  font-weight: bold;
+  color: #7a7a52;
+}
+
+.foto-perfil {
+  width: 300px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.stats {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.input-status {
+  border: 1px solid #848484;
+  border-radius: 20px;
+  min-height: 100px;
+  text-align: left;
+  padding: 8px;
+}
+
+.comentar {
+  width: 80%;
+}
+
+.mainLogo {
+  position: absolute;
+  left: 40%;
+  top: 0px;
+  height: 180px;
+}
+
+.input-comment {
+  border: 1px solid rgba(84,84,84,0.5);
+  border-radius: 20px;
+  text-align: left;
+  padding: 4px 18px;
+}
+
+.perfilcontainer {
+  padding: 10px;
+}
+
+.top-30 {
+  margin-top: 30px;
+}
+
+.footer {
+  border-radius: 5px;
+  font-size: 0.9em;
+  padding: 10px;
+  background-color: rgba(84,84,84,0.2);
+  color: #848484;
+}
+
+.footer-btn {
+  display: block;
+  margin-left: 10px;
+  color: #848484 !important;
+}
+
+.footer-btn:hover {
+  text-decoration: underline !important;
+}
+
+.top-posts {
+  background-color: rgba(255,255,255,0.5);
+  padding: 8px;
+  /* max-width: 400px; */
+  font-style: italic;
+  border: 1px dashed rgba(84,84,84,0.5);
+  border-radius: 20px;
+}
+
+.highlight {
+  /* border: 1px solid red; */
 }
