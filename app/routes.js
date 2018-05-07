@@ -6,6 +6,23 @@ var path = require('path');
 var multer = require('multer');
 
 
+// ---------- RUTA / ----------
+router.get('/', function(req, res, next) {
+  if(isLoggedIn){
+    res.redirect('/inicio');
+  }
+  else {
+    res.render('login.ejs', { message: req.flash('inicioMessage') });
+  }
+});
+
+// ---------- INICIO ----------
+router.get('/inicio', isLoggedIn, function(req, res) {
+  res.render('index.ejs', {
+    user: req.user
+  });
+});
+
 // ---------- LOGIN ----------
 router.get('/login', function(req, res, next) {
   res.render('login.ejs', { message: req.flash('loginMessage') });
@@ -16,6 +33,13 @@ router.post('/login', passport.authenticate('local-login', {
   failureRedirect: '/login',
   failureFlash: true,
 }));
+
+// ---------- LOGUOT ----------
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
 
 // ---------- SIGNUP ----------
 router.get('/signup', function(req, res) {
