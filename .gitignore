@@ -9,6 +9,9 @@
 #data
 /data
 
+#uploads
+/public/uploads
+
 # dependencies
 /node_modules
 
