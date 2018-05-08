@@ -1,4 +1,5 @@
 var LocalStrategy = require('passport-local').Strategy;
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 var User = require('../app/models/user');
 
 
@@ -13,6 +14,18 @@ module.exports = function(passport) {
       done(err, user);
     });
   });
+
+  passport.use(new GoogleStrategy({
+    clientID: "912541620202-94k2084r8tlsfd4igqlc93sjbe2lngqk.apps.googleusercontent.com",
+    clientSecret: "LLC1z9A2WgpMt1uU75hFKhLw",
+    callbackURL: "http://localhost:3000/"
+  },
+    function(accessToken, refreshToken, profile, cb) {
+      User.findOrCreate({ googleId: profile.id }, function (err, user) {
+        return cb(err, user);
+      });
+    }
+  ));
 
   passport.use('local-signup', new LocalStrategy({
     usernameField: 'email',

@@ -47,6 +47,10 @@ textarea {
   resize: none;
 }
 
+button {
+  margin-right: 5px;
+}
+
 .container {
   /* margin: 1em; */
   max-width: 95%;
