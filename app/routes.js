@@ -4,6 +4,9 @@ var router = express.Router();
 
 var Post = require('./models/post');
 
+var getPost = require('./obtenerpost.js');
+var getPosts = getPost.getPosts;
+
 var path = require('path');
 var multer = require('multer');
 
@@ -20,9 +23,16 @@ router.get('/', function(req, res, next) {
 
 // ---------- INICIO ----------
 router.get('/inicio', isLoggedIn, function(req, res) {
-  res.render('index.ejs', {
-    user: req.user
-  });
+  getPosts(req.user)
+    .then((response) => {
+      res.render('index.ejs', {
+        user: req.user,
+        post: response
+      });
+    })
+    .catch((response) => {
+      console.log("Error al buscar posts");
+    })
 });
 
 // ---------- LOGIN ----------

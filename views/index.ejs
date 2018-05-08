@@ -90,7 +90,47 @@
             </div>
           </div>
           <div class="top-30 tablon">
+            
+            <% for(var i = 0; i < post.length; i++) { %>    <!-- post.length cantidad de post del usuario -->
+                                            
+              <% var nombre_creador = "" %>
+              <% var apellido_creador = "" %>
+              <% var avatar = "" %>
+              
+              <% if(user.id == post[i].owner) { %> 
+                  <% nombre_creador = user.local.name %>
+                  <% apellido_creador = user.local.surname %>
+                  <% avatar = user.local.avatar %>
+              <% } %>
+              <div class="post">
+              <img src="images/index/post-1.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
+              <h3><%= post[i].estado %></h3>
+              <div class="sub-post">
+                  <p style="font-size:1em; margin-left: 1em; margin-bottom: 5px">
+                      <a style="color:#cc3300; margin-right:1em"><i class="far fa-heart"></i> <b>45</b></a>
+                      <a data-toggle="collapse" href="#comentCollapse1" role="button" aria-expanded="false" aria-controls="comentCollapse1" style="color:#848484"><i class="far fa-comment-dots"></i> Comentar</a>
+                      <div class="collapse" id="comentCollapse1">
+                        <div class="input-comment">
+                          <input type="text" name="comment" class="comentar" placeholder="Añade un comentario" value="">
+                          <button type="button" class="btn btn-outline-primary btn-sm">Publicar</button>
+                        </div>
+                      </div>
+                  </p>
+                  <div class="comments">
+                    <p class="comentario">
+                      <a href="#" class="nombre-perfil poster">SabiduriaGatuna</a>
+                      "La puerta mejor cerrada es aquella que puede dejarse abierta"
+                    </p>
+                  </div>
+              </div>
+              <div class="post-footer">
+                hace 13 minutos
+              </div>
+            </div>
+            
+            <% } %>
             <!-- post 1 -->
+            <!--
             <div class="post">
               <img src="images/index/post-1.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
               <div class="sub-post">
@@ -115,7 +155,9 @@
                 hace 13 minutos
               </div>
             </div>
+            -->
             <!-- post 2 -->
+            <!--
             <div class="post">
               <img src="images/index/post-2.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
               <div class="sub-post">
@@ -144,7 +186,9 @@
                 hace 48 minutos
               </div>
             </div>
+            -->
             <!-- post 3 -->
+            <!--
             <div class="post">
               <img src="images/index/post-3.jpg" class="img-fluid img-thumbnail img-post" alt="Post-1">
               <div class="sub-post">
@@ -169,6 +213,7 @@
                 hace 2 horas
               </div>
             </div>
+            -->
           </div>
         </div>
         <div class="highlight col-md-2 text-center">
