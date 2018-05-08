@@ -211,3 +211,7 @@ button {
 .highlight {
   /* border: 1px solid red; */
 }
+
+#boton_upload{
+  margin-bottom: 0px;
+}

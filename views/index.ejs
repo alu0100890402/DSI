@@ -75,16 +75,18 @@
         <div class="highlight col-md-7">
           <div class="top-30">
             <div class="input-status">
-              <textarea placeholder="¿Qué estás pensando?"></textarea>
-              <div class="row">
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-sm btn-outline-info"><i class="fas fa-location-arrow"></i> Ubicación</button>
-                  <button type="button" class="btn btn-sm btn-outline-primary"><i class="fas fa-camera-retro"></i> Imagen</button>
+              <form method="POST" action="/subir_post">
+                <textarea type="text" placeholder="¿Qué estás pensando?" name="estado" id="estado"></textarea>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="button" class="btn btn-sm btn-outline-info"><i class="fas fa-location-arrow"></i> Ubicación</button>
+                    <label name="file" id="boton_upload"class="btn btn-sm btn-outline-primary"><i class="fas fa-camera-retro"></i> Imagen<input type="file"  accept="image/*" hidden></label>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="submit" class="btn btn-sm btn-outline-success">Publicar</button>
+                  </div>
                 </div>
-                <div class="col-md-6 text-right">
-                  <button type="button" class="btn btn-sm btn-outline-success">Publicar</button>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
           <div class="top-30 tablon">

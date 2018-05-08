@@ -2,6 +2,8 @@ var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 
+var Post = require('./models/post');
+
 var path = require('path');
 var multer = require('multer');
 
@@ -63,6 +65,23 @@ router.get('/auth/google/callback',
     res.redirect('/');
   });
 
+
+
+// ---------- SUBIR_POST ----------
+router.post('/subir_post',isLoggedIn, (req, res) => {
+
+  console.log(req.body)
+  var newPost = new Post({
+    estado: req.body.estado,
+    owner: req.user._id,
+  });
+
+  newPost.save(function(err) {
+    if(err) return console.log(err);
+  });
+  
+  res.redirect('/inicio');
+});
 
 module.exports = router;
 
