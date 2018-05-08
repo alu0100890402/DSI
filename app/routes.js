@@ -10,6 +10,23 @@ var getPosts = getPost.getPosts;
 var path = require('path');
 var multer = require('multer');
 
+var storage = multer.diskStorage({
+  destination: './public/uploads/',
+  filename: function(req, file, cb){
+    var nombre_archivo = file.originalname;
+    var ext_archivo = path.extname(nombre_archivo);
+    cb(null, file.fieldname + '-' + Date.now() + ext_archivo);
+  }
+});
+
+var upload = multer({
+  storage: storage,
+  limits:{fileSize: 1000000000},
+  fileFilter: function(req, file, cb){
+    checkFileType(file, cb);
+  }
+}).single('file');
+
 
 // ---------- RUTA / ----------
 router.get('/', function(req, res, next) {
@@ -79,18 +96,22 @@ router.get('/auth/google/callback',
 
 // ---------- SUBIR_POST ----------
 router.post('/subir_post',isLoggedIn, (req, res) => {
-
-  console.log(req.body)
-  var newPost = new Post({
-    estado: req.body.estado,
-    owner: req.user._id,
+  upload(req, res, (err) => {
+    if(err){
+      res.render('index.ejs')
+    } else {
+      var newPost = new Post({
+        estado: req.body.estado,
+        owner: req.user._id
+      });
+      newPost.file = `uploads/${req.file.filename}`;
+      newPost.save(function(err) {
+        if(err) return console.log(err);
+      });
+      
+      res.redirect('/inicio');
+    }
   });
-
-  newPost.save(function(err) {
-    if(err) return console.log(err);
-  });
-  
-  res.redirect('/inicio');
 });
 
 module.exports = router;
@@ -99,4 +120,18 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())
       return next();
   res.redirect('/login');
+}
+
+function checkFileType(file, cb){
+  var filetypes = /jpeg|jpg|png|gif/;
+  
+  var extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  
+  var mimetype = filetypes.test(file.mimetype);
+  
+  if(mimetype && extname){
+    return cb(null, true);
+  } else{
+    cb('Error: sólo se admiten fotos!');
+  }
 }
