@@ -40,6 +40,13 @@ module.exports = function(passport) {
         if (user) {
           return done(null, false, req.flash('signupMessage', 'Este correo está asociado a otro usuario.'));
         } else {
+          if(/^([a-zA-Z0-9]{6,})$/.test(req.body.password)){
+            console.log("TRUE")
+          }
+          else{
+            return done(null, false, req.flash('signupMessage', 'Esta contraseña no es válida'));
+            console.log("False");
+          }
           var newUser = new User();
           newUser.local.name = req.body.name;
           newUser.local.surname = req.body.surname;
