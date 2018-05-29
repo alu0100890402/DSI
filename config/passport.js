@@ -40,7 +40,7 @@ module.exports = function(passport) {
         if (user) {
           return done(null, false, req.flash('signupMessage', 'Este correo está asociado a otro usuario.'));
         } else {
-          if(!(/^([a-zA-Z0-9]{6,})$/.test(req.body.password))){
+          if(!(/^([a-zA-Z0-9]{6,})/.test(req.body.password))){
             return done(null, false, req.flash('signupMessage', 'Esta contraseña no es válida'));
           }
           var newUser = new User();
