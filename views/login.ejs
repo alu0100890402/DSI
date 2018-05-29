@@ -30,7 +30,9 @@
       <div class="form-row">
         <div class="col">
           <label for="emails">Email</label>
-          <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduce tu email" name="email" required>
+          <input type="email" id="email" class="form-control" aria-describedby="emailHelp" placeholder="Introduce tu email" name="email"
+          pattern="[a-zA-Z0-9._+-]{2,}@[a-zA-Z0-9-]{3,}\.[a-zA-Z]{2,4}$"
+          required>
           <small id="emailHelp" class="form-text text-muted"></small>
         </div>
         <div class="col">
